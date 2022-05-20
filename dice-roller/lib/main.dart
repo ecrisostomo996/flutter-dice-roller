@@ -97,20 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }),
           )
         ],
-      )
-          // child: GridView.count(
-          //   crossAxisCount: 3,
-          //   children: List.generate(6, (index) {
-          //     return Center(
-          //       child: ElevatedButton(
-          //         style: style,
-          //         onPressed: () {},
-          //         child: Text('$index'),
-          //       ),
-          //     );
-          //   })
-          // ),
-          ),
+      )),
     );
   }
 }
