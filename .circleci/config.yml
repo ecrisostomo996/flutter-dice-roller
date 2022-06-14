@@ -7,5 +7,6 @@ jobs:
       - checkout
       - run: sudo apt-get update
       - run: flutter pub run dart_code_metrics:metrics analyze lib --reporter=html
-      - store_artifacts:
-        path: metrics
+
+      # - store_artifacts:
+      #   path: metrics
