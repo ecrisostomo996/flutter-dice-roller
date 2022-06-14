@@ -5,11 +5,7 @@ jobs:
       - image: cirrusci/flutter:v2.10.4
     steps:
       - checkout
-      - run:
-          name: Generate Test Coverage as HTML Report
-          command: |
-          sudo apt-get update
-          flutter pub run dart_code_metrics:metrics analyze lib --reporter=html
+      - run: sudo apt-get update
+      - run: flutter pub run dart_code_metrics:metrics analyze lib --reporter=html
       - store_artifacts:
         path: metrics
-
