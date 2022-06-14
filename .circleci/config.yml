@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
-          - name: Generate Test Coverage as HTML Report
+          name: Generate Test Coverage as HTML Report
           command: |
           sudo apt-get update
           flutter pub run dart_code_metrics:metrics analyze lib --reporter=html
