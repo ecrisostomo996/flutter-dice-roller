@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.flutter.my_app">
+    package="dev.flutter.dice_roller">
    <application
-        android:label="my_app"
+        android:label="Dice Roller"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
