@@ -1,42 +1,24 @@
 version: 2.1
 jobs:
-  # running commands on a basic image
-  Hello-World:
+  build:
     docker:
-      - image: cimg/base:2021.04
+      - image: python:3.6.3-jessie
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD # context / project UI env-var reference
+
+    working_directory: /tmp
     steps:
       - run:
-          name: Saying Hello
+          name: Creating Dummy Artifacts
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-  # fetching code from the repo
-  Fetch-Code:
-    docker:
-      - image: cimg/base:2021.04
-    steps:
-      - checkout
-      - run:
-          name: Getting the Code
-          command: |
-            ls -al
-            echo '^^^Your repo files^^^'
-  # running a node container
-  Using-Node:
-    docker:
-      - image: cimg/node:17.2
-    steps:
-      - run:
-          name: Running the Node Container
-          command: |
-            node -v
-workflows:
-  Example-Workflow:
-    jobs:
-      - Hello-World
-      - Fetch-Code:
-          requires:
-            - Hello-World
-      - Using-Node:
-          requires:
-            - Fetch-Code
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
+
+      - store_artifacts:
+          path: /tmp/artifacts
