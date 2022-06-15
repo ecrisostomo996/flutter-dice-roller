@@ -14,11 +14,11 @@ parameters:
     type: string
     default: ""
 
-workflows:
-  generate-report:
-    when: << pipeline.parameters.GHA_Action >>
-    jobs:
-      - build-report
+# workflows:
+#   generate-report:
+#     when: << pipeline.parameters.GHA_Action >>
+#     jobs:
+#       - build-report
 
 jobs:
   build-report:
