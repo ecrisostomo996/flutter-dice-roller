@@ -14,6 +14,11 @@ parameters:
     type: string
     default: ""
 
+workflows:
+  when: << pipeline.parameters.GHA_Action >>
+  jobs:
+    - build
+
 jobs:
   build:
     docker:
