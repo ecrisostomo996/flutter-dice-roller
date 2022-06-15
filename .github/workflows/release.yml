@@ -1,5 +1,0 @@
-# on:
-#   release:
-#     types: [published]
-
-# deploy-to-google-play:
