@@ -34,7 +34,6 @@ jobs:
       - run: flutter test
 
   trigger-circleci:
-    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Generate Circle CI Artifacts
