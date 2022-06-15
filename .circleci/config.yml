@@ -15,12 +15,13 @@ parameters:
     default: ""
 
 workflows:
-  when: << pipeline.parameters.GHA_Action >>
-  jobs:
-    - build
+  generate-report:
+    when: << pipeline.parameters.GHA_Action >>
+    jobs:
+      - build-report
 
 jobs:
-  build:
+  build-report:
     docker:
       - image: cirrusci/flutter
     steps:
