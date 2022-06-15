@@ -15,7 +15,7 @@ parameters:
     default: ""
 
 jobs:
-  build:
+  build-report:
     docker:
       - image: cirrusci/flutter
     steps:
@@ -25,3 +25,8 @@ jobs:
 
       - store_artifacts:
           path: metrics
+workflows:
+  generate-report:
+    when: << pipelines.parameters.GHA_Action >>
+    jobs:
+      - build-report
