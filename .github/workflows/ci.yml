@@ -33,11 +33,11 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
-      - run: echo ${{ github.event.pull_request.head }}
+      - run: echo ${{ github.event.pull_request.base.ref }}
 
   create-release-draft:
     if: |
-      (github.event_name == 'pull_request' && github.ref == 'refs/heads/main')
+      (github.event_name == 'pull_request' && github.ref == 'github.event.pull_request.base.ref == 'refs/heads/main'')
     permissions:
       contents: write
       pull-requests: write
