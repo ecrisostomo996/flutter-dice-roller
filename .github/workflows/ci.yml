@@ -33,7 +33,7 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
-      - run: echo ${{ github.ref }}
+      - run: echo ${{ github.event.pull_request.head }}
 
   create-release-draft:
     if: |
