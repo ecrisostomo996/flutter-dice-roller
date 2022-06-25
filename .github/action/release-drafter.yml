@@ -3,4 +3,5 @@ tag-template: "v$NEXT_MINOR_VERSION"
 
 template: |
   ## Changes
+
   $CHANGES
