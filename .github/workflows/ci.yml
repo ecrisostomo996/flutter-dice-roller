@@ -17,7 +17,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     name: flutter build
-    # The type of runner that the job will run on hello
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
       JAVA_VERSION: "12.x"
