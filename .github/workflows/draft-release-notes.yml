@@ -4,8 +4,6 @@ on:
 
 jobs:
   create-release-draft:
-    permissions:
-      contents: write
     name: "Create Release Notes"
     runs-on: ubuntu-latest
     steps:
